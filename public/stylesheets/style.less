@@ -1,0 +1,86 @@
+@nav-bar-height: 50px;
+@nav-bar-margin-bottom : 10px;
+@nav-bar-total-height: @nav-bar-height + @nav-bar-margin-bottom;
+@post-title-font-size: 55px;
+@post-title-padding: 30px;
+
+
+@color-green-dark: #425424;
+@color-green: #738E35;
+@color-green-light: #87A048;
+@color-blue-dark: #67AEDE;
+@color-blue: #87BCDF;
+@color-blue-light: #A5D0EC;
+@color-blue-gray: #D1E5F0;
+
+body {
+  padding: 0px;
+  margin:0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.vp-full{
+	width: 100%;
+	height: 100vh;
+	margin:0px;
+	padding:0px;
+	
+}
+.vp-full .first{
+	margin-top:CALC(-1 * @nav-bar-total-height);
+}
+
+
+.navbar{
+	margin-bottom:0px !important;
+}
+.searchbar > .form-control{
+	width:25vw;
+}
+
+#hoverScroll div.scrollableArea *
+{
+	position: relative;
+	display: block
+	float: left;
+	margin: 0;
+	padding: 0;
+	/* If you don't want the images in the scroller to be selectable, try the following
+		block of code. It's just a nice feature that prevent the images from
+		accidentally becoming selected/inverted when the user interacts with the scroller. */
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+/***********************************************************/
+// POSTS
+/***********************************************************/
+
+.carousel-image{
+	max-height: 500px;
+	max-height: 75vh;
+	max-height: CALC(~"100vh -" @nav-bar-height + @nav-bar-margin-bottom + @post-title-font-size + @post-title-padding + @post-title-padding);
+	margin: 0px auto;
+}
+.carousel-caption{
+	display:none;
+	text-shadow: 2px 2px #222;
+}
+
+.carousel-caption-title{
+	font-size: 2em;
+	
+}
+carousel-caption-details{
+	font-size: 1.2em;
+}
+.post-title{
+	font-size: @post-title-font-size;
+	padding: @post-title-padding 0;
+}
+.post-details{
+	padding-top:1em !important;
+}

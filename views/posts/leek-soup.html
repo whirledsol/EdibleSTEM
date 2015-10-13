@@ -1,0 +1,46 @@
+{% extends '../post.html' %}
+
+
+{% block item-summary %}<p>Unless you're allergic or a-lyin', two of your favourite things in the world are potatoes and cheese. Let's get that out of the way. Accepting this truth is the first step of the recipe. Next, add two cups of exotic, organic, nutritous leeks. Blend it up and you've got yourself a delicious and fancy appitizer/dinner for the whole family (or just yourself; that's ok too).</p>{%endblock%}
+
+{% block carousel-items %}
+	{%	set imagebaseURL = '/images/leek-soup/';	%}
+	
+	{%
+	set photoarray = [
+		{tag:"No. 1: The Leek",
+			location:imagebaseURL + "1.jpg",
+			caption:"The...Leek..."		
+			},
+			{tag:"Leek Cuttin'",
+			location:imagebaseURL + "2.jpg",
+			caption:"Some parts of the leek are good. Some are bad. Know the difference!"		
+			},
+			{tag:"It's Gettin' Hot in Here",
+			location:imagebaseURL + "3.jpg",
+			caption:"Ohhhhh steamy!"		
+			},
+			{tag:"Torque",
+			location:imagebaseURL + "4.jpg",
+			caption:"Hot Potatah, Hot Potatah. Use the power of physics to cut in up!"		
+			},
+			{tag:"I got a leek in my cup!",
+			location:imagebaseURL + "5.jpg",
+			caption:"Teehee..."		
+			},
+			{tag:"Cheese",
+			location:imagebaseURL + "6.jpg",
+			caption:"I'm a cheddar but I bought this cheese pre-made."		
+			},
+			{tag:"Whip it Good!",
+			location:imagebaseURL + "7.jpg",
+			caption:"Put the contents in your blender and blend it up."		
+			},
+			{tag:"Garnish",
+			location:imagebaseURL + "8.jpg",
+			caption:"Store in whatever container you've got handy!"		
+			}
+		];
+	%}
+{%endblock%}
+  

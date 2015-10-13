@@ -1,0 +1,85 @@
+{% extends './layout.html' %}
+
+{% block pageContent %}
+  {% parent %}
+  
+  <div id="carousel-errmygod-food" class="carousel slide" data-ride="carousel">
+  
+  {% block carousel-items %}{%endblock%}
+	  
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+  {% for item in photoarray %}
+    <li data-target="#carousel-errmygod-food" data-slide-to="{{loop.index}}" {% if loop.first %}class="active"{% endif %}></li>
+  {% endfor %}   
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+
+	{% for item in photoarray %}
+		{% if loop.first %}
+			<div class="item active" data-id ="{{loop.index +1}}">
+		{% else %}
+			<div class="item" data-id ="{{loop.index}}">
+		{% endif %}
+				<img src="{{ item.location }}" class="carousel-image" alt="{{ item.tag }}">
+				<div class="carousel-caption">
+					<div class="carousel-caption-title">
+						{{ item.tag }}
+					</div>
+					<div class="carousel-caption-details">
+						{{ item.caption }}
+					</div>	
+				</div>
+		</div>
+	{% endfor %}                                    
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-errmygod-food" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-errmygod-food" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="post-title">{{title}}</div>
+		</div>
+	</div>
+	<div class="row post-details"]>
+		<div class="col-xs-12 col-md-7">
+		{% block item-summary %}{% endblock %}
+		</div>
+		<div class="col-xs-12 col-md-5">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Recipe</div>
+				<div class="panel-body">
+					{% block item-recipe %}{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>  
+  
+{% endblock %}
+
+{% block scripts %}
+	{% parent %}
+	<script>
+	$( document).ready(function(){
+		$(".carousel").hover(function(){
+			$(".carousel-caption").fadeIn();
+		},
+		function(){
+			$(".carousel-caption").fadeOut();
+		});
+	});
+	</script>
+
+{% endblock %}
