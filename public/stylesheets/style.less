@@ -12,6 +12,7 @@
 @color-blue-gray: #D1E5F0;
 @color-light-gray: #fefefe;
 @color-light-yellow: #fbf4d9;
+
 /***********************************************************/
 // NAVIGATION
 /***********************************************************/
@@ -20,7 +21,7 @@ body {
   margin:0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-@media (max-width:768px){
+@media (max-width:850px){
 	body{
 	font-size:12px;
 	}
@@ -125,6 +126,7 @@ body {
 	-o-user-select: none;
 	user-select: none;
 }
+
 .vp-full{
 	width: 100%;
 	height: 100vh;
@@ -133,6 +135,13 @@ body {
 	padding:0px;
 	
 }
+
+@media (max-width:992px){
+	.vp-full.md{
+		height:auto;	
+	}
+}
+
 /***********************************************************/
 // POSTS
 /***********************************************************/

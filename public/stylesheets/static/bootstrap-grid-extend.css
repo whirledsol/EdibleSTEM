@@ -26,6 +26,10 @@
 		vertical-align:middle;
 		text-align:center;
 	}
+	.row-xs-table{
+	display:table;
+	height:100%;
+	}
 }
 @media (min-width: 768px) and (max-width: 992px) {
 	.col-sm-table{
@@ -36,6 +40,10 @@
 	.col-sm-center{
 		vertical-align:middle;
 		text-align:center;
+	}
+	.row-sm-table{
+	display:table;
+	height:100%;
 	}
 }
 @media (min-width: 992px) and (max-width: 1200px) { 
@@ -48,6 +56,10 @@
 		vertical-align:middle;
 		text-align:center;
 	}
+	.row-md-table{
+	display:table;
+	height:100%;
+	}
 }
 @media (min-width: 1200px) { 
 	.col-lg-table{
@@ -58,5 +70,9 @@
 	.col-lg-center{
 		vertical-align:middle;
 		text-align:center;
+	}
+	.row-lg-table{
+	display:table;
+	height:100%;
 	}
 }
