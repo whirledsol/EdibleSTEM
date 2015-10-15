@@ -4,6 +4,8 @@ var app = express();
 var swig = require('swig');
 var path = require('path');
 var favicon = require('serve-favicon');
+var fs = require('fs');
+
 
 //TODO: are these needed?
 //var logger = require('morgan');
@@ -31,6 +33,8 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//delete all css files that have a less counterpart
+fs.readdir(path.join(__dirname, 'public/stylesheets'),cleanCSS);
 
 //ROUTING
 var routes = require('./routes/index');
@@ -76,6 +80,30 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
+function cleanCSS(err, files){
+	
+	if (err != null){
+		console.log(err);
+		return false;	
+	}
+	//good to go
+	for(var index=0;index < files.length;index++){
+		var styleFile = files[index];
+		if(styleFile.indexOf(".less") >= 0){
+			//found a less file
+			var rootname = styleFile.substring(0,styleFile.indexOf(".less"));
+			var cssCounterPart = rootname + ".css";
+			//delete css file
+			try{
+				fs.unlinkSync(path.join(__dirname, 'public/stylesheets/'+cssCounterPart));
+			}
+			catch(deleteerr){
+				console.log("No need to delete " + path.join(__dirname, 'public/stylesheets/'+cssCounterPart));
+			}
+		}
+	}	
+	
+	return true;
+}
 
 module.exports = app;
