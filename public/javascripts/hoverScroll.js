@@ -95,7 +95,7 @@
 				hotspotleft.css("margin-left",-_options.hotspotwidth);
 			}
 			hotspotleft.css("cursor","pointer");
-			hotspotleft.css("z-index","9000");
+			hotspotleft.css("z-index","4000");
 			element.prepend(hotspotleft);
 			
 			var hotspotright = jQuery('<div/>', {
@@ -116,7 +116,7 @@
 				hotspotright.css("margin-right",-_options.hotspotwidth);
 			}
 			hotspotright.css("cursor","pointer");
-			hotspotright.css("z-index","9000");
+			hotspotright.css("z-index","4000");
 			element.append(hotspotright);
 			
 			//hotspot events

@@ -11,6 +11,7 @@
 @color-blue-light: #A5D0EC;
 @color-blue-gray: #D1E5F0;
 @color-light-gray: #fefefe;
+@color-light-yellow: #fbf4d9;
 /***********************************************************/
 // NAVIGATION
 /***********************************************************/
@@ -84,8 +85,30 @@ body {
 	padding-top:@nav-bar-height;
 }
 /***********************************************************/
-// HOME
+// HOME	
 /***********************************************************/
+.sky-gradient{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,ffffff+100 */
+	background: @color-blue-gray; /* Old browsers */
+	background: -moz-linear-gradient(top,  @color-blue-gray 0%, #ffffff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color-blue-gray), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @color-blue-gray 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @color-blue-gray 0%,#ffffff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @color-blue-gray 0%,#ffffff 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  @color-blue-gray 0%,#ffffff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color-blue-gray', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+.sun-gradient{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,ffffff+100 */
+	background: @color-light-yellow; /* Old browsers */
+	background: -moz-linear-gradient(top,  @color-light-yellow 0%, #ffffff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color-light-yellow), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @color-light-yellow 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @color-light-yellow 0%,#ffffff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @color-light-yellow 0%,#ffffff 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  @color-light-yellow 0%,#ffffff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color-light-yellow', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
 #hoverScroll div.scrollableArea *
 {
 	position: relative;
