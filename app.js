@@ -19,7 +19,7 @@ app.set('view cache', false);
 
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/icon.ico'));
 /*
 app.use(logger('dev'));
 app.use(bodyParser.json());

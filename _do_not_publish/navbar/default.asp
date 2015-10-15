@@ -40,8 +40,6 @@
 				position:fixed !important;
 				width:100%;
 				border-radius:0px !important;
-				
-				/* TODO */
 				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefefe+26,d8ffd6+100 */
 				background: #fefefe; /* Old browsers */
 				background: -moz-linear-gradient(-45deg,  #fefefe 26%, #d8ffd6 100%); /* FF3.6+ */
