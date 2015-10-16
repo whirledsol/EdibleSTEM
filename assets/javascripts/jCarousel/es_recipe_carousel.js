@@ -29,6 +29,9 @@
                 }
 				//width becomes the width of each li
                 carousel.jcarousel('items').css('width', Math.ceil(width) + 'px');
+				//since we're here, let's set the height too
+				var ITEM_ASPECT_RATIO = 3.0/4.0;
+				carousel.jcarousel('items').css('height', Math.ceil(width*ITEM_ASPECT_RATIO) + 'px');
             })
             .jcarousel({
                 wrap: 'circular'

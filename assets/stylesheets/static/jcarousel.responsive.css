@@ -1,13 +1,14 @@
 .jcarousel-wrapper {
-    margin: 20px auto;
+    /*margin: 20px auto;*/
     position: relative;
     border: 10px solid #fff;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: 0 0 2px #999;
-    -moz-box-shadow: 0 0 2px #999;
+    -webkit-box-shadow: 0 0 6px #999 inset;
+    -moz-box-shadow: 0 0 6px #999 inset;
     box-shadow: 0 0 2px #999;
+
 }
 
 /** Carousel **/
@@ -15,7 +16,7 @@
 .jcarousel {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: 100%; /*!important*/
 }
 
 .jcarousel ul {
@@ -35,41 +36,41 @@
     box-sizing: border-box;
 }
 
-.jcarousel img {
-    display: block;
-    max-width: 100%;
-    height: auto !important;
-}
 
 /** Carousel Controls **/
 
 .jcarousel-control-prev,
 .jcarousel-control-next {
-    position: absolute;
+	position:absolute;
     top: 50%;
     margin-top: -15px;
     width: 30px;
     height: 30px;
+	background:#ffffff;
     text-align: center;
-    background: #4E443C;
-    color: #fff;
+    color: #425424;
     text-decoration: none;
     text-shadow: 0 0 1px #000;
-    font: 24px/27px Arial, sans-serif;
+    font: 33px/25px Arial, sans-serif;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
-    -webkit-box-shadow: 0 0 4px #F0EFE7;
-    -moz-box-shadow: 0 0 4px #F0EFE7;
-    box-shadow: 0 0 4px #F0EFE7;
+    -webkit-box-shadow: 0 0 8px #aaaaaa;
+    -moz-box-shadow: 0 0 8px #aaaaaa;
+    box-shadow: 0 0 8px #aaaaaa;
+	text-decoration: none !important;
 }
+.jcarousel-control-prev:active,
+.jcarousel-control-next:active {
+    -webkit-box-shadow: 0 0 0px #cccccc;
+    -moz-box-shadow: 0 0 0px #cccccc;
 
-.jcarousel-control-prev {
-    left: 15px;
 }
-
-.jcarousel-control-next {
-    right: 15px;
+.jcarousel-control-prev{
+left:-20px;
+}
+.jcarousel-control-next{
+right:-20px;
 }
 
 /** Carousel Pagination **/
@@ -115,3 +116,14 @@
     -moz-box-shadow: 0 0 2px #F0EFE7;
     box-shadow: 0 0 2px #F0EFE7;
 }
+
+
+
+
+.jcarousel ul li > .post{
+	margin:2.5%;
+	height:95%;
+	width:95%;
+	padding:10px;
+}
+
