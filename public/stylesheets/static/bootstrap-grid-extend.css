@@ -6,6 +6,10 @@
 	display:table;
 	height:100%;
 }
+.container-table{
+	display:table;
+	height:100%;
+}
 .col-table{
 	display:table-cell;
 	float: none;
