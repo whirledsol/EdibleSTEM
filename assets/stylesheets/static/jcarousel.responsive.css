@@ -59,6 +59,7 @@
     -moz-box-shadow: 0 0 8px #aaaaaa;
     box-shadow: 0 0 8px #aaaaaa;
 	text-decoration: none !important;
+	z-index:500;
 }
 .jcarousel-control-prev:active,
 .jcarousel-control-next:active {
