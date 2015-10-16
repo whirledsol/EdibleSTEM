@@ -1,3 +1,6 @@
+var ROOTURL = "/"
+
+
 //very important variables, praise be to them
 var express = require('express');
 var app = express();
@@ -34,14 +37,18 @@ app.use('/posts/', PostController);
 
 
 
+
 //ERRORS
 
-// catch 404 and forward to error handler
+// catch 404 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
-  //console.log(err.stack);
   err.status = 404;
-  next(err);
+  res.render('error/404', {
+      message: err.message,
+      error: err,
+	  HOME_PATH: ROOTURL
+    });
 });
 
 // error handlers
@@ -51,7 +58,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render('error/500', {
       message: err.message,
       error: err
     });

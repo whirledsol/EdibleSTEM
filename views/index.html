@@ -32,29 +32,17 @@
 			});
 			
 			//A BIT OF ANIMATION FUN
-			var ANIMATING = false;
-			if($(window).width() > 992){
+
+			
 				$("#basil-image").hover(function(){
 					//hover in
-						//if(!ANIMATING){
-						//ANIMATING = true;
+					if($(window).width() >= 992 && $('#basil-caption').hasClass("hidden")){
 							$('#basil-caption').removeClass().addClass("fadeInUp" + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 								$(this).removeClass();
-								//ANIMATING = false;
+			
 							});
-						//}
-				
-				},function(){
-					//hover out
-					//if(!ANIMATING){
-						//ANIMATING = true;
-						$('#basil-caption').removeClass().addClass("fadeOutDown" + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-						  $(this).removeClass().addClass("hidden");
-						  //ANTIMATING = false;
-						});
-					//}
+					}
 				});
-			}
 			
 			
 		});
@@ -97,11 +85,11 @@
 					<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 						<div class="jcarousel">
 							<ul>
-								<li><div class="post">{{CreateBlock()}}</div></li>
-								<li><div class="post">{{CreateBlock()}}</div></li>
-								<li><div class="post">{{CreateBlock()}}</div></li>
-								<li><div class="post">{{CreateBlock()}}</div></li>
-								<li><div class="post">{{CreateBlock()}}</div></li>
+								<li><div class="post">{{CreateBlock("Potato Leek Soup","leek-potato-soup","leek-soup/2.jpg")}}</div></li>
+								<li><div class="post">{{CreateBlock("More")}}</div></li>
+								<li><div class="post">{{CreateBlock("to")}}</div></li>
+								<li><div class="post">{{CreateBlock("come")}}</div></li>
+								<li><div class="post">{{CreateBlock("...")}}</div></li>
 							</ul>
 						</div>
 
