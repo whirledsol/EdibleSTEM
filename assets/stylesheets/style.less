@@ -1,0 +1,158 @@
+@nav-bar-height: 52px;
+@post-title-font-size: 55px;
+@post-title-padding: 30px;
+
+
+@color-green-dark: #425424;
+@color-green: #738E35;
+@color-green-light: #87A048;
+@color-blue-dark: #67AEDE;
+@color-blue: #87BCDF;
+@color-blue-light: #A5D0EC;
+@color-blue-gray: #D1E5F0;
+@color-light-gray: #fefefe;
+@color-light-yellow: #fbf4d9;
+
+/***********************************************************/
+// NAVIGATION
+/***********************************************************/
+body {
+  padding: 0px;
+  margin:0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+@media (max-width:850px){
+	body{
+	font-size:12px;
+	}
+	.navbar-brand.overflow{
+		visibility:hidden  !important;
+	}
+	.navbar-brand.placeholder{
+		visibility:visible !important;
+	}
+}
+
+.seperatron-below{
+	-webkit-box-shadow: 0px 10px 14px -4px rgba(0,0,0,0.24);
+	-moz-box-shadow: 0px 10px 14px -4px rgba(0,0,0,0.24);
+	box-shadow: 0px 10px 14px -4px rgba(0,0,0,0.24);
+	margin-bottom:14px !important;
+}
+
+.navbar{
+	margin-bottom:0px !important;
+	position:fixed !important;
+	z-index:8000;
+	border-radius:0px !important;
+	
+	width:100%;			
+	
+	background: @color-light-gray; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  @color-light-gray 26%, @color-green-light 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(26%,@color-light-gray), color-stop(100%,@color-green-light)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  @color-light-gray 26%,@color-green-light 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  @color-light-gray 26%,@color-green-light 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  @color-light-gray 26%,@color-green-light 100%); /* IE10+ */
+	background: linear-gradient(135deg,  @color-light-gray 26%,@color-green-light 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color-light-gray', endColorstr='@color-green-light',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	
+	-webkit-box-shadow: 0px 10px 14px -4px rgba(0,0,0,0.24);
+	-moz-box-shadow: 0px 10px 14px -4px rgba(0,0,0,0.24);
+	box-shadow: 0px 10px 14px -4px rgba(0,0,0,0.24);
+}
+
+.navbar-brand{
+	font-size:4em;
+	visibility:hidden;
+	display:block;
+}
+.navbar-brand.placeholder{
+	overflow-x:visible;
+}
+.navbar-brand.overflow{
+	position:absolute;
+	top:10px;
+	left:10px;
+	visibility:visible;
+	z-index:9000;
+}			
+.navbar-brand.overflow img{
+	position:absolute;
+	width:100%;
+	top:0;
+	left:0;
+	margin-top:9px;
+	z-index:-1;
+}
+.searchbar > .form-control{
+	width:25vw;
+}
+
+.pageContent{
+	padding-top:@nav-bar-height;
+}
+/***********************************************************/
+// HOME	
+/***********************************************************/
+.sky-gradient{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,ffffff+100 */
+	background: @color-blue-gray; /* Old browsers */
+	background: -moz-linear-gradient(top,  @color-blue-gray 0%, #ffffff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color-blue-gray), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @color-blue-gray 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @color-blue-gray 0%,#ffffff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @color-blue-gray 0%,#ffffff 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  @color-blue-gray 0%,#ffffff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color-blue-gray', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+.sun-gradient{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,ffffff+100 */
+	background: @color-light-yellow; /* Old browsers */
+	background: -moz-linear-gradient(top,  @color-light-yellow 0%, #ffffff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color-light-yellow), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @color-light-yellow 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @color-light-yellow 0%,#ffffff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @color-light-yellow 0%,#ffffff 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  @color-light-yellow 0%,#ffffff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color-light-yellow', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+@media (min-width: 992px){
+	.vp-full{
+		width: 100%;
+		height: 100vh;
+		height: CALC(~"100vh -" @nav-bar-height);
+		margin:0px;
+		padding:0px;
+		overflow:hidden;
+	}
+}
+/***********************************************************/
+// POSTS
+/***********************************************************/
+
+.carousel-image{
+	max-height: 500px;
+	max-height: 75vh;
+	max-height: CALC(~"100vh -" @nav-bar-height + @post-title-font-size + @post-title-padding + @post-title-padding);
+	margin: 0px auto;
+}
+.carousel-caption{
+	display:none;
+	text-shadow: 2px 2px #222;
+}
+
+.carousel-caption-title{
+	font-size: 2em;
+	
+}
+carousel-caption-details{
+	font-size: 1.2em;
+}
+.post-title{
+	font-size: @post-title-font-size;
+	padding: @post-title-padding 0;
+}
+.post-details{
+	padding-top:1em !important;
+}

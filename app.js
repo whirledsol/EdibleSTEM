@@ -1,3 +1,6 @@
+var ROOTURL = "/"
+
+
 //very important variables, praise be to them
 var express = require('express');
 var app = express();
@@ -6,53 +9,46 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var fs = require('fs');
 
-
-//TODO: are these needed?
-//var logger = require('morgan');
-//var cookieParser = require('cookie-parser');
-//var bodyParser = require('body-parser');
-
 // view engine setup
 app.engine('html',swig.renderFile);
-app.use(express.static(path.join(__dirname ,'public')));
+app.use(express.static(path.join(__dirname ,'assets')));
 app.set('view engine', 'html')
 app.set('views', path.join(__dirname, 'views'));
 app.set('view cache', false);
 
 
-// uncomment after placing your favicon in /public
-app.use(favicon(__dirname + '/public/icon.ico'));
-/*
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-*/
+// website icon
+app.use(favicon(__dirname + '/assets/icon.ico'));
+
 
 //For .LESS and static files
-app.use(require('less-middleware')(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('less-middleware')(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'assets')));
 
 //delete all css files that have a less counterpart
-fs.readdir(path.join(__dirname, 'public/stylesheets'),cleanCSS);
+fs.readdir(path.join(__dirname, 'assets/stylesheets'),cleanCSS);
 
 //ROUTING
-var routes = require('./routes/index');
-var posts = require('./routes/posts');
-app.use('/', routes);
-app.use('/posts/', posts);
+var HomeController = require('./controllers/index');
+var PostController = require('./controllers/posts');
+app.use('/', HomeController);
+app.use('/posts/', PostController);
+
 
 
 
 
 //ERRORS
 
-// catch 404 and forward to error handler
+// catch 404 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
-  console.log(err.stack);
   err.status = 404;
-  next(err);
+  res.render('error/404', {
+      message: err.message,
+      error: err,
+	  HOME_PATH: ROOTURL
+    });
 });
 
 // error handlers
@@ -62,7 +58,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render('error/500', {
       message: err.message,
       error: err
     });
@@ -80,6 +76,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
+/**
+	cleanCSS: callback which looks at all less files and runs a clean on css counterparts
+*/
 function cleanCSS(err, files){
 	
 	if (err != null){
@@ -95,10 +94,10 @@ function cleanCSS(err, files){
 			var cssCounterPart = rootname + ".css";
 			//delete css file
 			try{
-				fs.unlinkSync(path.join(__dirname, 'public/stylesheets/'+cssCounterPart));
+				fs.unlinkSync(path.join(__dirname, 'assets/stylesheets/'+cssCounterPart));
 			}
 			catch(deleteerr){
-				console.log("No need to delete " + path.join(__dirname, 'public/stylesheets/'+cssCounterPart));
+				console.log("No need to delete " + path.join(__dirname, 'assets/stylesheets/'+cssCounterPart));
 			}
 		}
 	}	

@@ -1,32 +1,11 @@
 {% extends './layout.html' %}
 
 {% block styles %}
-	
+	<link rel="Stylesheet" type="text/css" href="stylesheets/static/jcarousel.responsive.css" />
 	<link rel="Stylesheet" type="text/css" href="stylesheets/static/papershadows.css" />
+	<link rel="Stylesheet" type="text/css" href="stylesheets/static/animate.css" />
 
 	<style>
-	#hoverScroll{
-		width:90%;
-		margin:0 auto;
-		padding:10px 0px;
-	}	
-	#hoverScroll .post{
-		margin:5px;
-		height:300px;
-		width:400px;
-		padding:1em;
-	}
-	#hoverScrollHotspotLeft, #hoverScrollHotspotRight{
-		background:rgba(0,0,0,0.1);
-		display:table;
-	}
-	#hoverScrollHotspotLeft > div, #hoverScrollHotspotRight > div{	
-		display:table-cell;
-		vertical-align:middle;
-		opacity:0.5;
-		color:white;
-		font-size:8em;
-	}
 	</style>
 
 {% endblock %}
@@ -35,23 +14,15 @@
 
 {% block scripts %}
   {% parent %}
-	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
-	<script src="javascripts/hoverScroll.js" type="text/javascript"></script>
+	<!-- For home page recipe carousel -->
+	<script src="javascripts/jCarousel/jquery.jcarousel-core.min.js" type="text/javascript"></script>
+	<script src="javascripts/jCarousel/jquery.jcarousel-control.js" type="text/javascript"></script>
+	<script src="javascripts/jCarousel/es_recipe_carousel.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 	
 		$(document).ready(function () {
-	
-			$("div#hoverScroll").hoverScroll({
-				insideout: "in",
-				hotspotsize:"50",
-				extraWidth:"20",
-				hotspotrightHTML:"<div>&rsaquo;</div>",
-				hotspotleftHTML:"<div >&lsaquo;</div>"
-			});
-			
-		
-			
+
 			//add a random shadow effect to each post
 			$(".post").each(function(index){
 				
@@ -59,7 +30,21 @@
 				var classname = "shadow" + random;
 				$(this).addClass(classname);	
 			});
-	
+			
+			//A BIT OF ANIMATION FUN
+
+			
+				$("#basil-image").hover(function(){
+					//hover in
+					if($(window).width() >= 992 && $('#basil-caption').hasClass("hidden")){
+							$('#basil-caption').removeClass().addClass("fadeInUp" + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+								$(this).removeClass();
+			
+							});
+					}
+				});
+			
+			
 		});
 	</script>
 {% endblock %}
@@ -68,31 +53,55 @@
 
 {% block pageContent %}
   {% parent %}
-	
-	<link rel='stylesheet' href='/stylesheets/static/smoothdivscroll.css' />
-  	
-	<div class="background" style="background-image: url(images/tea.jpg);background-size: 170vh 100vh;"></div>
-		
 
-	<div class="vp-full md" >
-		<div class="row row-table sun-gradient">
-			<div class="col-xs-12 col-md-6 col-md-table col-lg-table col-table-center" style="vertical-align:bottom"><img src="/images/basil_full.png" class="padding-top-large img-responsive" style="margin:0 auto"/></div>
+  <div class="vp-full md sun-gradient seperatron-below" >
+		<div class="row row-table">
+			<div class="col-xs-12 col-md-6 col-md-table col-lg-table col-table-center" style="vertical-align:bottom">
+				<img id="basil-caption" src="/images/basil_caption.png" class="hidden img-responsive" style="margin:0 auto;max-width:300px"/>
+				<img id="basil-image" src="/images/basil_full.png" class="padding-top-large img-responsive" style="margin:0 auto"/>
+			</div>
 			<div class="col-xs-12 col-md-6 col-md-table col-lg-table col-table-center">
 				<div class="padding-xxlarge">
-					<span class="font-handwritten font-3-em font-green-dark">Nutrition for Nerds.</span><br>When you're calibating an oscilloscope or performing a redox titration, the lateral hypothalamus is not usually the first thing on the mind. This blog hopes to combine taste, art, and science to promote education, entertainment, and satisfaction.</div>
-				</div>
+					<span class="font-handwritten font-3-em font-green-dark">Nutrition for Nerds.</span><br>When you're calibating an oscilloscope or performing a redox titration, the lateral hypothalamus is not usually the first thing on the mind.<br>This blog hopes to combine taste, art, and science to promote education, entertainment, and satisfaction.</div>
 			</div>
 		</div>
 	</div>
-	
 	<div class="vp-full" >
-		<div id="hoverScroll">
-			<div class="post">Hi</div>
-			<div class="post">Hi</div>
-			<div class="post">Hi</div>
-			<div class="post">Hi</div>
-			<div class="post">Hi</div>
-			<div class="post">Hi</div>
-		</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					Can-dids
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					Cool Tips (ice glass water)
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-0 col-md-1">
+					Fork
+				</div>
+				<div class="col-xs-12 col-md-10">
+					<div class="jcarousel-wrapper">
+					
+					<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+						<div class="jcarousel">
+							<ul>
+								<li><div class="post">{{CreateBlock("Potato Leek Soup","leek-potato-soup","leek-soup/2.jpg")}}</div></li>
+								<li><div class="post">{{CreateBlock("More")}}</div></li>
+								<li><div class="post">{{CreateBlock("to")}}</div></li>
+								<li><div class="post">{{CreateBlock("come")}}</div></li>
+								<li><div class="post">{{CreateBlock("...")}}</div></li>
+							</ul>
+						</div>
+
+						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+						<p class="jcarousel-pagination"></p>
+					</div>
+				</div>
+				<div class="col-xs-0 col-md-1">
+					Knife and spoon
+				</div>
+			</div>
+			
 	</div>
 {% endblock %}
