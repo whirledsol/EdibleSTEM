@@ -10,10 +10,11 @@
 	display:table;
 	height:100%;
 }
-.container-wide{
-
+/*.text-center{
 
 }
+*/
+
 .col-table{
 	display:table-cell;
 	float: none;
@@ -38,6 +39,10 @@
 	display:table;
 	height:100%;
 	}
+	
+	.hidden-xs{
+		display:none;
+	}
 }
 @media (min-width: 768px) and (max-width: 992px) {
 	.col-sm-table{
@@ -52,6 +57,9 @@
 	.row-sm-table{
 	display:table;
 	height:100%;
+	}
+	.hidden-sm{
+		display:none;
 	}
 }
 @media (min-width: 992px) and (max-width: 1200px) { 
@@ -68,6 +76,9 @@
 	display:table;
 	height:100%;
 	}
+	.hidden-md{
+		display:none;
+	}
 }
 @media (min-width: 1200px) { 
 	.col-lg-table{
@@ -82,5 +93,8 @@
 	.row-lg-table{
 	display:table;
 	height:100%;
+	}
+	.hidden-lg{
+		display:none;
 	}
 }
