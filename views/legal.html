@@ -1,0 +1,22 @@
+{% extends './layout.html' %}
+
+{% block pageContent %}
+  {% parent %}
+  
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Legal</h1>
+				<p>The site herein contains original content, except where explicitly stated. All content created by the site webmaster is subject to the creative commons license and can be used or shared as long as the original source is stated.</p>
+				<div><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">EdibleSTEM</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Will Rhodes</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</div>
+				<p>If you have questions regarding use of content or requests to remove content, please visit my <a href="{{HOME_PATH}}/about#contact">contact section</a>.
+			</div>
+		</div>
+	</div>  
+  
+{% endblock %}
+
+{% block scripts %}
+	{% parent %}
+
+{% endblock %}

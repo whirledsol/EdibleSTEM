@@ -1,6 +1,7 @@
 @nav-bar-height: 52px;
 @post-title-font-size: 55px;
 @post-title-padding: 30px;
+@footer-height: 3em;
 
 @color-green-dark: #425424;
 @color-green: #738E35;
@@ -15,10 +16,17 @@
 /***********************************************************/
 // NAVIGATION
 /***********************************************************/
-body {
+html,body {
   padding: 0px;
   margin:0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height:100%;
+}
+a:hover{
+	text-decoration:underline;
+}
+a:hover > div {
+	text-decoration:underline;
 }
 @media (max-width:850px){
 	body{
@@ -45,6 +53,7 @@ body {
 	position:fixed !important;
 	z-index:8000;
 	border-radius:0px !important;
+	border:none;
 	
 	width:100%;			
 	
@@ -91,7 +100,29 @@ body {
 
 .pageContent{
 	padding-top:@nav-bar-height;
+	min-height: 100%;
+	margin-bottom: -@footer-height; 
+}	
+.pageContent:after{
+  content: "";
+  display: block;
+  height:@footer-height;
 }
+
+.loading{
+	text-align:center;
+	padding:40px;
+	font-size:2em;
+	
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	-webkit-box-shadow: 0px 0px 24px 2px rgba(0,0,0,0.56);
+	-moz-box-shadow: 0px 0px 24px 2px rgba(0,0,0,0.56);
+	box-shadow: 0px 0px 24px 2px rgba(0,0,0,0.56);
+}
+
 /***********************************************************/
 // HOME	
 /***********************************************************/
@@ -126,6 +157,35 @@ body {
 		padding:0px;
 		overflow:hidden;
 	}
+}
+.rotate-right-on-hover:hover{
+	-ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+	
+	transition: -ms-transform 0.15s;
+	transition: transform 0.15s;
+	 -webkit-transition: -webkit-transform 0.15s;
+	 -moz-transition: -moz-transform 0.15s;
+}
+.rotate-left-on-hover:hover{
+	-ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-7deg);
+	
+	transition: -ms-transform 0.15s;
+	transition: transform 0.15s;
+	-webkit-transition: -webkit-transform 0.15s;
+	-moz-transition: -moz-transform 0.15s;
+	 
+}
+
+/***********************************************************/
+// SPECIAL PAGES
+/***********************************************************/
+img.title-img{
+	display:inline;
+	height:7em;
 }
 /***********************************************************/
 // POSTS
@@ -163,9 +223,8 @@ footer{
 	font-family: Arial;
 	background: @color-blue-gray;
 	color: #000000;
-	font-size:14px;
 	width:100%;
-	max-height:4em;
+	height:@footer-height;
 	padding: 1em 0;
 }
 footer a{
@@ -173,5 +232,5 @@ footer a{
 }
 .footer-separator{
 	color:#000000;
-	padding:0 1em;
+	padding:0 0.5em;
 }

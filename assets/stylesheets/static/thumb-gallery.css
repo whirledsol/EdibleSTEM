@@ -1,0 +1,39 @@
+.thumb-gallery > .row > div[class^="col-"]{
+	padding:0;
+
+}
+
+.thumb-gallery  img{
+	cursor:pointer;
+}
+.thumb-gallery ul{
+padding:0;
+}
+.thumb-gallery li{
+	list-style-type: none;
+	padding:5px;
+	margin:0;
+	position:relative;
+}
+.thumb-gallery li:hover  img{
+	transition: filter 1s;
+	 -webkit-transition: -webkit-filter 1s;
+	 -moz-transition: filter 1s;
+	
+	filter: blur(5px);
+	-webkit-filter:blur(5px);
+
+}
+
+.thumb-gallery-title{
+	position:absolute;
+	color:white;
+	text-shadow: 2px black;
+	font-family:Verdana,Helvetica,Arial;
+	font-size:2em;
+	text-align:center;
+	vertical-align:middle;
+	display:none;
+	
+
+}

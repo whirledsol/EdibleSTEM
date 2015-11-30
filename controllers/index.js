@@ -1,12 +1,30 @@
 var express = require('express');
 var router = express.Router();
 
-
-var vars = new Object;
 	/**
-		HOME_PATH
+		GLOBAL VARS
 	*/
-	vars.HOME_PATH = ".";	
+var vars = new Object;
+	vars.HOME_PATH = ".";
+	vars.title = "Edible STEM";	
+
+
+
+
+router.get('/about', function(req, res, next) {
+  res.render('about', vars);
+});
+router.get('/cool-tips', function(req, res, next) {
+  res.render('cool-tips', vars);
+});
+router.get('/can-dids', function(req, res, next) {
+  res.render('can-dids', vars);
+});
+router.get('/legal', function(req, res, next) {
+  res.render('legal', vars);
+});
+
+	
 	/**
 		From Parameters, creates a block on the page for the carousel
 	*/
@@ -37,7 +55,7 @@ var vars = new Object;
 	/**
 		Title
 	*/
-	vars.title = "Edible STEM";
+	
 
 
 

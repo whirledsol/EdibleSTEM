@@ -1,0 +1,59 @@
+{% extends './layout.html' %}
+
+{% block scripts %}
+	{% parent %}
+	<script src="/javascripts/utils.js"></script>
+	<script src="/javascripts/thumb-gallery.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.thumb-gallery').loading();
+		
+		
+		});
+	</script>
+{% endblock %}
+
+{% block styles %}
+	{% parent %}
+	<link rel="stylesheet" href="/stylesheets/static/thumb-gallery.css" />
+{% endblock %}
+
+
+{% block pageContent %}
+  {% parent %}
+  
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-7 padding-bottom-large">
+				<h1><img src="/images/can.png" class="title-img" />Can-dids</h1>
+				<h2>Some candid photos from my archive.</h2>
+			</div>
+		</div>
+			
+		
+		<div class="thumb-gallery">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<ul>
+						<li><img class="img-responsive " src="/images/candids/apples.jpg" data-title="Apples."/></li>
+						<li><img class="img-responsive " src="/images/candids/pizza.jpg" data-title="Pizza."/></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 ">
+					<ul>
+						<li><img class="img-responsive " src="/images/candids/egg-breakfast.jpg" data-title="Egg Breakfast."/></li>
+						<li><img class="img-responsive " src="/images/candids/chowder.jpg" data-title="Clam Chowder."/></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<ul>
+						<li><img class="img-responsive " src="/images/candids/pancakes.jpg" data-title="Pancakes."/></li>
+					</ul>
+				</div>
+			
+			</div>
+		</div>
+	</div>  
+  
+{% endblock %}
+
