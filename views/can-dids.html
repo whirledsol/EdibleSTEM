@@ -6,7 +6,21 @@
 	<script src="/javascripts/thumb-gallery.js"></script>
 	<script>
 		$(document).ready(function(){
-			$('.thumb-gallery').loading();
+			//$('.thumb-gallery').loading();
+			
+			//Lightbox
+			$('.thumb-gallery img').click(function(){
+				var path = $(this).attr("src");
+				var title = $(this).parent().data("title") !== undefined ? $(this).parent().data("title") : "";
+				$("#lightbox").empty();
+				var img = $('<img src="'+path+'" />');
+				$("#lightbox").append(img);
+				$('#lightbox-modal .title').html(title);
+				$('#lightbox-modal').modal();
+				
+					
+			});
+			
 		
 		
 		});
@@ -35,19 +49,19 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-4">
 					<ul>
-						<li><img class="img-responsive " src="/images/candids/apples.jpg" data-title="Apples."/></li>
-						<li><img class="img-responsive " src="/images/candids/pizza.jpg" data-title="Pizza."/></li>
+						<li data-title="Apples."><img class="img-responsive " src="/images/candids/apples.jpg" /></li>
+						<li data-title="Pizza."><img class="img-responsive " src="/images/candids/pizza.jpg" /></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 ">
 					<ul>
-						<li><img class="img-responsive " src="/images/candids/egg-breakfast.jpg" data-title="Egg Breakfast."/></li>
-						<li><img class="img-responsive " src="/images/candids/chowder.jpg" data-title="Clam Chowder."/></li>
+						<li data-title="Egg Breakfast."><img class="img-responsive " src="/images/candids/egg-breakfast.jpg" /></li>
+						<li data-title="Clam Chowder."><img class="img-responsive " src="/images/candids/chowder.jpg" /></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4">
 					<ul>
-						<li><img class="img-responsive " src="/images/candids/pancakes.jpg" data-title="Pancakes."/></li>
+						<li data-title="Pancakes."><img class="img-responsive " src="/images/candids/pancakes.jpg" /></li>
 					</ul>
 				</div>
 			
@@ -55,5 +69,21 @@
 		</div>
 	</div>  
   
+  
+<div id="lightbox-modal" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div id="lightbox" class="modal-body">
+			</div>
+			<div class="fa fa-spinner fa-spin fa-2x" style="position:absolute;z-index:-1"></div>
+			<div class="modal-footer">
+			<div class="pull-left title"></div>
+			<div class="pull-right"><button data-dismiss="modal" type="button" class="btn btn-default fa fa-remove fa-2x"></button></div>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 {% endblock %}
 
