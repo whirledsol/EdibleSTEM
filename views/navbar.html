@@ -20,7 +20,7 @@
 		<li><a href="{{HOME_PATH}}/about">About</a></li>
 		<li><a href="{{HOME_PATH}}/can-dids">Can-dids</a></li>
 		<li><a href="{{HOME_PATH}}/cool-tips">Cool Tips</a></li>
-		<li><a href="{{HOME_PATH}}/cool-tips">The Laborateaory</a></li>
+		<li><a href="{{HOME_PATH}}/lab">The Lab</a></li>
       </ul>
       <!--<form class="navbar-form navbar-left searchbar" role="search">
         <div class="form-group">
@@ -34,3 +34,9 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+{% block scripts %}
+	<script>
+	$(document).ready(function(){$('nav a[href$="' + this.location.pathname.replace(/\//g,"").replace(/\./g,"") + '"]').parent().addClass('active');});
+	</script>
+{% endblock %}

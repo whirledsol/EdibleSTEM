@@ -21,6 +21,7 @@ html,body {
   margin:0px;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   height:100%;
+  position:relative;
 }
 a:hover{
 	text-decoration:underline;
@@ -184,8 +185,14 @@ a:hover > div {
 // SPECIAL PAGES
 /***********************************************************/
 img.title-img{
-	display:inline;
-	height:7em;
+	display:block;
+	position:absolute;
+	left:20px;
+	top:CALC(@nav-bar-height + 40px);
+	z-index:-9000;
+	max-width:40vw;
+	max-height:90vh;
+	opacity:0.2;
 }
 
 

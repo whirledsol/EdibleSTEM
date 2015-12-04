@@ -20,6 +20,9 @@ router.get('/cool-tips', function(req, res, next) {
 router.get('/can-dids', function(req, res, next) {
   res.render('can-dids', vars);
 });
+router.get('/lab', function(req, res, next) {
+  res.render('lab', vars);
+});
 router.get('/legal', function(req, res, next) {
   res.render('legal', vars);
 });
