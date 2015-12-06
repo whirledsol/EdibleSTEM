@@ -1,0 +1,10 @@
+{
+	"verbose": true,
+	"ignore": ["_do_not_publish/*","app.js"],
+	"watch": [
+		"views/*",
+		"views/posts/*",
+		"views/error/*"
+	],
+	"ext": "js json html"
+}

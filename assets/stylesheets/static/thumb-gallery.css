@@ -11,7 +11,7 @@
 	
 	filter: blur(0px);
 	-webkit-filter:blur(0px);
-	
+	opacity:0;
 }
 .thumb-gallery ul{
 	padding:0;
@@ -41,6 +41,6 @@
 	text-align:center;
 	vertical-align:middle;
 	display:none;
-	
+	cursor:pointer;
 
 }

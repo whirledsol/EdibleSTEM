@@ -4,9 +4,11 @@
 	{% parent %}
 	<script src="/javascripts/utils.js"></script>
 	<script src="/javascripts/thumb-gallery.js"></script>
+	
 	<script>
 		$(document).ready(function(){
-			//$('.thumb-gallery').loading();
+		
+			$('.thumb-gallery img').loading();
 			
 			//Lightbox
 			$('.thumb-gallery img').click(function(){

@@ -1,15 +1,3 @@
-var IMAGE_PADDING = 5;
-
-$(window).on("load", function(){
-	$(".thumb-gallery img").each(function(){
-			var height = $(this).height();
-			var parent = $(this).parent();
-			parent.height(height + IMAGE_PADDING);
-		
-	});
-});
-
-
 $(document).ready(function(){
 	
 		$(".thumb-gallery li").hover(function(){
